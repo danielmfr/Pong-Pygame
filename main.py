@@ -204,22 +204,6 @@ class Opponent(Entity):
             observer.update(self)
 
 
-'''def inputs():
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()'''
-
-
-'''def draw():
-    screen.fill((0, 0, 0))
-    pygame.draw.ellipse(screen, (200, 200, 200), world.ball.body)
-    pygame.draw.rect(screen, (200, 200, 200), world.player.body)
-    pygame.draw.rect(screen, (200, 200, 200), world.opponent.body)
-    # Atualizando a janela 60fps
-    pygame.display.flip()'''
-
-
 class Text(Entity):
     def __init__(self, x, y, text_size, text, physics):
         self.physics = physics
@@ -301,24 +285,3 @@ class World:
 # Objetos
 world = World()
 world.game_loop()
-
-'''previous = pygame.time.get_ticks()
-lag = 0
-FPS = 60
-MS_PER_UPDATE = 1000 / FPS
-while True:
-    current = pygame.time.get_ticks()
-    elapsed = current - previous
-    previous = current
-    lag += elapsed
-    # Entradas
-    inputs()
-    # Atualização
-    while lag >= MS_PER_UPDATE:
-        # Atualização
-        for e in world.entities:
-            e.physics.update(world, MS_PER_UPDATE)
-        lag -= MS_PER_UPDATE
-    # Desenho
-    draw()
-'''
